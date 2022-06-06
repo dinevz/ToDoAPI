@@ -25,6 +25,7 @@ class TodoListApiView(APIView):
         data = {
             'task': request.data.get('task'),
             'completed': request.data.get('completed'),
+            'priority': request.data.get('priority'),
         }
         
         serializer = TodoSerializer(data=data)
@@ -70,6 +71,7 @@ class TodoDetailApiView(APIView):
         data = {
             'task': request.data.get('task'),
             'completed': request.data.get('completed'),
+            'priority': request.data.get('priority'),
         }
         
         serializer = TodoSerializer(instance=todo_instance, data=data, partial=True)
